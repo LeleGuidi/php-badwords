@@ -1,5 +1,6 @@
 <?php
-
+    //Creazione variabile con paragrafo
+    $paragrafo = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem odio voluptatem quo, quia tenetur iure alias, modi delectus rerum id nesciunt assumenda officiis porro cupiditate nisi vero suscipit vitae? Laboriosam!';
 
 ?>
 <!DOCTYPE html>
@@ -11,6 +12,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>ciao</h1>
+    <h1>Paragrafo:</h1>
+    <p><?= $paragrafo ?></p>
+    <h2>Lunghezza paragrafo:</h2>
+    <span><?= strlen($paragrafo) ?></span>
 </body>
 </html>
