@@ -1,9 +1,14 @@
 <?php
     //Creazione variabile con paragrafo
     $paragrafo = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem odio voluptatem quo, quia tenetur iure alias, modi delectus rerum id nesciunt assumenda officiis porro cupiditate nisi vero suscipit vitae? Laboriosam!';
-    $censura = $_GET["censura"];
-    $paragrafo_censurato = str_replace($censura, "***", $paragrafo);
-    $lunghrezza_nuovo_paragrafo = strlen($paragrafo_censurato);
+
+    if (isset($_GET["censura"])) {
+        $censura = $_GET["censura"];
+        $paragrafo_censurato = str_replace($censura, "***", $paragrafo);
+        $lunghrezza_nuovo_paragrafo = strlen($paragrafo_censurato);
+    }
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -28,8 +33,8 @@
     </form>
     <!-- Stampa del paragrafo censurato e lunghezza  -->
     <h1>Paragrafo con censure:</h1>
-    <p><?= $paragrafo_censurato?></p>
+    <p><?php if (isset($_GET["censura"])) {echo $paragrafo_censurato;}?></p>
     <h2>Lunghezza nuovo paragrafo censurato:</h2>
-    <span><?= $lunghrezza_nuovo_paragrafo?></span>
+    <span><?php if (isset($_GET["censura"])) {echo $lunghrezza_nuovo_paragrafo;}?></span>
 </body>
 </html>
